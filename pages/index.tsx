@@ -18,11 +18,11 @@ const Home: NextPage = () => {
 
 
         <div className={styles.grid}>
-          <Link href="/api/cuaFunction" className={styles.card}>
-            <>
+          <Link href="/api/cuaFunction">
+            <div className={styles.card}>
               <h2>Test a function!</h2>
               <p>Running this Vercel function will trigger a cua function ⚡️</p>
-            </>
+            </div>
           </Link>
 
         </div>
