@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cuarun/client": "^0.0.1",
+    "@cua.run/client": "0.0.5",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@cua.run/babel": "0.0.4",
     "@types/node": "18.7.2",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
