@@ -418,10 +418,10 @@
     "@babel/template" "^7.18.10"
     "@changesets/cli" "^2.24.2"
 
-"@cua.run/client@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@cua.run/client/-/client-0.0.5.tgz#8cec2807a66350095d7eef009ad3f6f4ac71e424"
-  integrity sha512-8NTq4NyBtCSeeAVRbcJdWHuScn+SC4UPZdyodupgFyKXwk8lce3AM2HA4mordqFXK8kgKRm2Oijv+l0PB4bMig==
+"@cua.run/client@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@cua.run/client/-/client-0.0.6.tgz#43d3d0b67a37f3a5be737e0e73f3ca67ad4fdba9"
+  integrity sha512-GAfZPC4G4H7RBbk7alObp4DDjwNRAHgj6FxzzAc+wrPPs+1Vc58F6fSa4FqG5daUmiUPq6ZTDd2XZFYJQOxlog==
   dependencies:
     "@changesets/cli" "^2.24.2"
     "@whatwg-node/fetch" "^0.2.9"
