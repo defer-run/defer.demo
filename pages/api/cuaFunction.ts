@@ -1,6 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import importContacts from "../../cua.functions/importContacts";
 
+import cua from '@cua.run/client'
+
+if (process.env.CUA_TOKEN) {
+  cua.init({ apiToken: process.env.CUA_TOKEN });
+}
+
 type Data = {
   ok: boolean;
 };
