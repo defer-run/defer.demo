@@ -3,9 +3,18 @@ interface Contact {
   name: string;
 }
 
-const importContacts = (companyId: string, contact: Contact[]) => {
-  // ...
-  return Promise.resolve();
+const importContacts = (
+  companyId: string,
+  contacts: Contact[]
+): Promise<void> => {
+  return new Promise((resolve) => {
+    console.log(`Start importing contacts for company#${companyId}`);
+    setTimeout(() => {
+      console.log(contacts);
+      console.log("Done.");
+      resolve();
+    }, 5000);
+  });
 };
 
 export default importContacts;
