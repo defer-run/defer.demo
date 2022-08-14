@@ -408,20 +408,20 @@
     human-id "^1.0.2"
     prettier "^1.19.1"
 
-"@cua.run/babel@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@cua.run/babel/-/babel-0.0.4.tgz#f1f3235d863a6ddd30ae2880e3aefaaba015f469"
-  integrity sha512-UoPLbOyPTjNFmcqj8C/778kuzIa9y1iI9MOIhI/SAaITBPsUUmzHzr8iG5/W9WCv00toDqvEoSHs18AK01gGYA==
+"@cua.run/babel@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@cua.run/babel/-/babel-0.0.5.tgz#cf4a2028c4934a2712a9db538c03d94dc23248f9"
+  integrity sha512-+XMSdNyZXwSc4zjIpFIKwguHcqN2ZM3LisU7RB+OGU7DEz/65meY8SIJqrAyvkxGQu8PLMgFEbLCxSOOrB9TCg==
   dependencies:
     "@babel/core" "^7.18.10"
     "@babel/helper-plugin-utils" "^7.18.9"
     "@babel/template" "^7.18.10"
     "@changesets/cli" "^2.24.2"
 
-"@cua.run/client@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@cua.run/client/-/client-0.0.6.tgz#43d3d0b67a37f3a5be737e0e73f3ca67ad4fdba9"
-  integrity sha512-GAfZPC4G4H7RBbk7alObp4DDjwNRAHgj6FxzzAc+wrPPs+1Vc58F6fSa4FqG5daUmiUPq6ZTDd2XZFYJQOxlog==
+"@cua.run/client@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@cua.run/client/-/client-0.0.7.tgz#15cf30ea374c3d6cf1291dce5592fc9366e96285"
+  integrity sha512-X2my3ilziX3iSQAWzOaw+ldyoPBCM5aw9smhG5FLivM64MdT9bbtmhLBxzm7lP37SvDDtE0r7QUn5Q1GPa97VQ==
   dependencies:
     "@changesets/cli" "^2.24.2"
     "@whatwg-node/fetch" "^0.2.9"

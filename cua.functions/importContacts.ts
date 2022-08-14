@@ -3,7 +3,7 @@ interface Contact {
   name: string;
 }
 
-const importContacts = (contact: Contact[]) => {
+const importContacts = (companyId: string, contact: Contact[]) => {
   // ...
   return Promise.resolve();
 };
