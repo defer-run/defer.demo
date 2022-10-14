@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import importContacts from "../../cua.functions/importContacts";
+import importContacts from "../../background-functions/importContacts";
 
 import cua from '@cua.run/client'
 
