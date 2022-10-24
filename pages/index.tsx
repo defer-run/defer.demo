@@ -8,20 +8,20 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>cua.run demo</title>
+        <title>defer.run demo</title>
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <a href="https://cua.run">cua</a> demo
+          <a href="https://defer.run">Defer</a> demo
         </h1>
 
 
         <div className={styles.grid}>
-          <Link href="/api/cuaFunction">
+          <Link href="/api/deferFunction">
             <div className={styles.card}>
               <h2>Test a function!</h2>
-              <p>Running this Vercel function will trigger a cua function ⚡️</p>
+              <p>Running this Vercel function will trigger a defer function ⚡️</p>
             </div>
           </Link>
 
