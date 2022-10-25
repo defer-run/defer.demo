@@ -2,6 +2,7 @@ import { init, defer } from "@defer.run/client";
 
 init({
   apiUrl: process.env.DEFER_API,
+  debug: true,
 });
 
 interface Contact {

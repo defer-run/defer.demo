@@ -237,10 +237,10 @@
     human-id "^1.0.2"
     prettier "^1.19.1"
 
-"@defer.run/client@0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-0.0.10.tgz#96a8adc365fa1b4c58dd078f9a031325b03687d3"
-  integrity sha512-aSatxCDJv/A3/a9BdwWtbROhGsgxHm0h1YlLxRLo+HS4DSMbFuBZsHURDbqvlSiG5M7y6k0M0Wht2H/77igfwQ==
+"@defer.run/client@0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-0.0.14.tgz#09edcb56b5348524f77544c69d2e48ed73de4aa8"
+  integrity sha512-rNwtJ/DLKpRsIKmb6QOtfhSBYvUGKVZjfF71AFfpXupTIbt5yKKFQJ9AioiFmpMskSy6LCkvJmWoVNm/OFJk6w==
   dependencies:
     "@changesets/cli" "^2.24.2"
     "@whatwg-node/fetch" "^0.2.9"
