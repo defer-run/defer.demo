@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 
 
         <div className={styles.grid}>
-          <Link href="/api/deferFunction">
+          <Link href="/api/contacts/import">
             <div className={styles.card}>
               <h2>Test a function!</h2>
               <p>Running this Vercel function will trigger a defer function ⚡️</p>
