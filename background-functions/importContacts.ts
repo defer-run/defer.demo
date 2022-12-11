@@ -4,16 +4,13 @@ interface Contact {
   name: string;
 }
 
-const importContacts = (
-  companyId: string,
-  contacts: Contact[]
-): Promise<void> => {
+const importContacts = (companyId: string, contacts: Contact[]) => {
   return new Promise((resolve) => {
     console.log(`Start importing contacts for company#${companyId}`);
     setTimeout(() => {
       console.log(contacts);
       console.log("Done.");
-      resolve();
+      resolve({ imported: 10000 });
     }, 5000);
   });
 };
