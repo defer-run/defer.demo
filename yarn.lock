@@ -17,12 +17,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@defer.run/client@0.0.16":
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-0.0.16.tgz#08db73090384d151bc8d5491b5846504e131a18a"
-  integrity sha512-GVIsE+wezsusoYAr8DTw1cmxIAg81TMWj14MkuCoCFgupVX70uh1PceSTHITXRrIz1Q5tMC71UsPDSZMLnnxFg==
+"@defer.run/client@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-0.2.0.tgz#d459231a98568e4fb53f99cbd492af1725143975"
+  integrity sha512-72DVHTZ6IxtJN6ejF7wnF7pYwApg2y7FLTkhV9QHys/HwytCllmWzZQ+EX96K3J+ui4xX9dPRPX/MsGfJ1PUSg==
   dependencies:
     "@whatwg-node/fetch" "^0.2.9"
+    parse-duration "^1.0.2"
 
 "@eslint/eslintrc@^1.3.0":
   version "1.3.0"
@@ -1463,6 +1464,11 @@ parent-module@^1.0.0:
   integrity sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==
   dependencies:
     callsites "^3.0.0"
+
+parse-duration@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/parse-duration/-/parse-duration-1.0.2.tgz#b9aa7d3a1363cc7e8845bea8fd3baf8a11df5805"
+  integrity sha512-Dg27N6mfok+ow1a2rj/nRjtCfaKrHUZV2SJpEn/s8GaVUSlf4GGRCRP1c13Hj+wfPKVMrFDqLMLITkYKgKxyyg==
 
 path-exists@^4.0.0:
   version "4.0.0"
