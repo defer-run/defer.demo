@@ -37,7 +37,7 @@ const Home: NextPage = () => {
             </div>
           </Link>
 
-          <Link href="/api/contacts/import-parallel-with-result">
+          <Link href="/api/contacts/scheduledImport">
             <div className={styles.card}>
               <h2>
                 <code>defer.delayed()</code>
