@@ -1,6 +1,6 @@
 import { isDeferExecution } from "@defer.run/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import importContactsProut from "../../../background-functions/importContacts";
+import importContacts from "@background/importContacts";
 
 type Data = {
   ok: boolean;
@@ -11,9 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const deferExecution = await importContactsProut("1", [
-    { name: "Paul", id: "1" },
-  ]);
+  const deferExecution = await importContacts("1", [{ name: "Paul", id: "1" }]);
   res.status(200).json({
     ok: true,
     executionId: isDeferExecution(deferExecution)
