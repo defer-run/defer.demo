@@ -2,7 +2,7 @@ import { defer, init } from "@defer.run/client";
 import importContacts from "./importContacts";
 
 init({
-  // apiUrl: "http://localhost:8080/api/v1/",
+  apiUrl: "http://192.168.1.137:8080/api/v1/",
   debug: true,
 });
 
