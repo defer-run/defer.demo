@@ -19,4 +19,4 @@ const importContactsEveryDay = () => {
   });
 };
 
-export default defer.schedule(importContacts, "every 15 minutes");
+export default defer.schedule(importContactsEveryDay, "every 15 minutes");
