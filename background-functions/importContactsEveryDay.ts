@@ -10,7 +10,7 @@ init({
 });
 
 const importContactsEveryDay = () => {
-  return new Promise<{ imported: number; companyId: string }>((resolve) => {
+  return new Promise<{ imported: number }>((resolve) => {
     console.log("start importing contacts");
     setTimeout(() => {
       console.log("Done.");
