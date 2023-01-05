@@ -17,12 +17,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@defer.run/client@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-0.2.0.tgz#d459231a98568e4fb53f99cbd492af1725143975"
-  integrity sha512-72DVHTZ6IxtJN6ejF7wnF7pYwApg2y7FLTkhV9QHys/HwytCllmWzZQ+EX96K3J+ui4xX9dPRPX/MsGfJ1PUSg==
+"@defer.run/client@0.3.0-alpha-20230103152621-2da6c79":
+  version "0.3.0-alpha-20230103152621-2da6c79"
+  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-0.3.0-alpha-20230103152621-2da6c79.tgz#7cfa4520bcedfecc0676b31528689a5d677cc73d"
+  integrity sha512-aUm2YYg7GSOtFJvt+He3fnpohDgOmIi3iRr0ftZgLHaiUxTGFX+5d6GGAf3aU6z5xNPGqSarpU1ls8gESM+73g==
   dependencies:
     "@whatwg-node/fetch" "^0.2.9"
+    friendly-cron "^0.0.2"
     parse-duration "^1.0.2"
 
 "@eslint/eslintrc@^1.3.0":
@@ -904,6 +905,11 @@ formdata-node@^4.3.1:
   dependencies:
     node-domexception "1.0.0"
     web-streams-polyfill "4.0.0-beta.1"
+
+friendly-cron@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/friendly-cron/-/friendly-cron-0.0.2.tgz#02f72b8c44c62b55f8e898a01c0b6c23cbadbabc"
+  integrity sha512-/vVd2jS0LHTryOIIwaWZruRaBBBPdiliZTExlfKnNn35YxnA5Y4wa6EuZIpbiNiSwwBvuLoWz4Ir5WWu5XfgXQ==
 
 fs.realpath@^1.0.0:
   version "1.0.0"
