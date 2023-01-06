@@ -9,7 +9,7 @@ init({
   debug: true,
 });
 
-const importContacts = (companyId: string, contacts: Contact[]) => {
+const importContacts2 = (companyId: string, contacts: Contact[]) => {
   return new Promise<{ imported: number; companyId: string }>((resolve) => {
     console.log(`Start importing contacts for company#${companyId}`);
     setTimeout(() => {
@@ -20,4 +20,4 @@ const importContacts = (companyId: string, contacts: Contact[]) => {
   });
 };
 
-export default defer(importContacts);
+export default defer(importContacts2);
