@@ -25,6 +25,15 @@ const Home: NextPage = () => {
             </div>
           </Link>
 
+          <Link href="/api/contacts/importFailed">
+            <div className={styles.card}>
+              <h2 style={{color: 'red'}}>
+                <code>defer()</code>
+              </h2>
+              <p style={{color: 'red'}}>Run a single import contact that will fail in the background</p>
+            </div>
+          </Link>
+
           <Link href="/api/contacts/import-parallel-with-result">
             <div className={styles.card}>
               <h2>
