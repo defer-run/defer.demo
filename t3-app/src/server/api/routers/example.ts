@@ -1,5 +1,6 @@
 import { z } from "zod";
 import importContacts from "../../../background-functions/importContacts";
+import { env } from "../../../env/server.mjs";
 
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "../trpc";
 
@@ -7,6 +8,7 @@ export const exampleRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(async ({ input }) => {
+      console.log(env.NODE_ENV);
       await importContacts("1", []);
       return {
         greeting: `Hello ${input.text}`,
