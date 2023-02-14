@@ -1,9 +1,9 @@
 import { defer, init } from "@defer.run/client";
 
-type EndState = "started" | "succeed" | "failed"
+type State = "started" | "succeed" | "failed"
 
 interface DemoOptions {
-  endState?: EndState
+  endState?: State
 }
 
 init({
@@ -13,12 +13,13 @@ init({
 
 const sendEmails = (options: DemoOptions = {}) => {
   return new Promise<{ sent: number }>((resolve, reject) => {
+    let interval = 5000
     console.log("Start sending emails");
+
+    if (options.endState && options.endState === 'started') interval = 300000
 
     setTimeout(() => {
       switch(options.endState) {
-        case "started":
-          console.log('Running...')
         case "failed":
           reject(new Error('fail'));
           break;
@@ -28,7 +29,7 @@ const sendEmails = (options: DemoOptions = {}) => {
           resolve({ sent: 10000 });
           break;
       }
-    }, 5000);
+    }, interval);
   });
 };
 
