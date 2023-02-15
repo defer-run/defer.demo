@@ -1,8 +1,4 @@
 import { defer, init } from "@defer.run/client";
-interface Contact {
-  id: string;
-  name: string;
-}
 
 type State = "started" | "succeed" | "failed"
 
@@ -15,15 +11,14 @@ init({
   debug: true,
 });
 
-const importContacts = (companyId: string, contacts: Contact[], options: DemoOptions = {}) => {
-  return new Promise<{ imported: number; companyId: string }>((resolve, reject) => {
+const sendEmails = (options: DemoOptions = {}) => {
+  return new Promise<{ sent: number }>((resolve, reject) => {
     let interval = 5000
-    console.log(`Start importing contacts for company#${companyId}`);
+    console.log("Start sending emails");
 
     if (options.endState && options.endState === 'started') interval = 300000
 
     setTimeout(() => {
-      console.log(contacts);
       switch(options.endState) {
         case "failed":
           reject(new Error('fail'));
@@ -31,11 +26,11 @@ const importContacts = (companyId: string, contacts: Contact[], options: DemoOpt
         case "succeed":
         default:
           console.log("Done.");
-          resolve({ imported: 10000, companyId });
+          resolve({ sent: 10000 });
           break;
       }
     }, interval);
   });
 };
 
-export default defer(importContacts);
+export default defer(sendEmails);

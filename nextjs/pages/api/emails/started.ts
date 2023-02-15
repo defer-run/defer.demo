@@ -1,6 +1,6 @@
 import { isDeferExecution } from "@defer.run/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import failingImportContacts from "../../../background-functions/failingImportContacts";
+import sendEmails from "../../../background-functions/sendEmails";
 
 type Data = {
   ok: boolean;
@@ -11,9 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const deferExecution = await failingImportContacts("1", [
-    { name: "Paul", id: "1" },
-  ]);
+  const deferExecution = await sendEmails({ endState: "started" });
   res.status(200).json({
     ok: true,
     executionId: isDeferExecution(deferExecution)
