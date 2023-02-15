@@ -1,3 +1,4 @@
+import { delay } from "@defer.run/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import importContacts from "../../../background-functions/importContacts";
 
@@ -9,6 +10,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  await importContacts.delayed("1", [], undefined, { delay: "1h" });
+  const delayedImportContacts = delay(importContacts, "1h")
+  await delayedImportContacts("1", []);
   res.status(200).json({ ok: true });
 }
