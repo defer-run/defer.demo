@@ -10,7 +10,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const delayedImportContacts = delay(importContacts, "1h")
+  const delayedImportContacts = delay(importContacts, "1d")
   await delayedImportContacts("1", []);
   res.status(200).json({ ok: true });
 }

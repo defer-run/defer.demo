@@ -71,7 +71,7 @@ const Home: NextPage = () => {
           <Link href="/api/emails/succeed">
             <div className={styles.card}>
               <h3>
-                <code>defer(sendEmails)()</code>
+                <code>defer()</code>
               </h3>
               <p>Send a single email in the background</p>
             </div>
