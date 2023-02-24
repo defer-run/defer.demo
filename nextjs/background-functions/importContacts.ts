@@ -1,4 +1,4 @@
-import { defer, init } from "@defer.run/client";
+import { defer, configure } from "@defer.run/client";
 interface Contact {
   id: string;
   name: string;
@@ -10,9 +10,9 @@ interface DemoOptions {
   endState?: State
 }
 
-init({
-  // apiUrl: "http://localhost:8080/api/v1/",
-  debug: true,
+configure({
+  endpoint: "http://localhost:8080/api/v1/",
+  verbose: true,
 });
 
 const importContacts = (companyId: string, contacts: Contact[], options: DemoOptions = {}) => {

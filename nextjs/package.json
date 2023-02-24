@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@defer.run/client": "1.0.0-alpha-20230224163353-d791d79",
+    "@defer.run/client": "1.0.0-alpha-20230224174742-0a3a02b",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"

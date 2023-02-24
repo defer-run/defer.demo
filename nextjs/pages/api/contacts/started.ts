@@ -1,4 +1,3 @@
-import { isDeferExecution } from "@defer.run/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import importContacts from "../../../background-functions/importContacts";
 
@@ -16,8 +15,6 @@ export default async function handler(
   ], { endState: "started" });
   res.status(200).json({
     ok: true,
-    executionId: isDeferExecution(deferExecution)
-      ? deferExecution.id
-      : undefined,
+    executionId: deferExecution.id
   });
 }

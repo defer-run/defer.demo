@@ -1,4 +1,4 @@
-import { defer, init } from "@defer.run/client";
+import { defer, configure } from "@defer.run/client";
 
 type State = "started" | "succeed" | "failed"
 
@@ -6,9 +6,9 @@ interface DemoOptions {
   endState?: State
 }
 
-init({
-  // apiUrl: "http://localhost:8080/api/v1/",
-  debug: true,
+configure({
+    endpoint: "http://localhost:8080/api/v1",
+    verbose: true,
 });
 
 const sendEmails = (options: DemoOptions = {}) => {
