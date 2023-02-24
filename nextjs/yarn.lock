@@ -22,10 +22,10 @@
   resolved "https://registry.yarnpkg.com/@darkeyedevelopers/natural-cron.js/-/natural-cron.js-1.1.0.tgz#d77721f6ea5912d9d114db6b0dbe6aa26eb7b235"
   integrity sha512-CBRydMA7ExsLF6Ukmhf5QeUcv64RVfS417MqRZhN97hle1bDTJuT91AwO1K7gez/41uLSH6We07TqNp/XeLryA==
 
-"@defer.run/client@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-0.5.0.tgz#11ae0176f6e7ce68800b248aabc0f9ddfc53baf8"
-  integrity sha512-eLJHlVEyg3tn9iKB0OkrNHYG2aGEYsL21yDhQAS0jFZRyJcSAQVvXJOf4HyYbdHti7bZsvqZo3c03gH5fj1zxA==
+"@defer.run/client@1.0.0-alpha-20230224163353-d791d79":
+  version "1.0.0-alpha-20230224163353-d791d79"
+  resolved "https://registry.yarnpkg.com/@defer.run/client/-/client-1.0.0-alpha-20230224163353-d791d79.tgz#9df632d8bb4cabdc53a7b5dcaeb4ee38c2ecf043"
+  integrity sha512-J/yPZk4ETR66rny701DmdLDdSMmXz03qKJLI8xKxO8ndNCesvX4Pks5r53YP3GyvILo7daXQJdSOKNtWoicH+w==
   dependencies:
     "@darkeyedevelopers/natural-cron.js" "^1.1.0"
     "@whatwg-node/fetch" "^0.2.9"

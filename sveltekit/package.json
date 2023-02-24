@@ -33,6 +33,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@defer.run/client": "^0.3.0"
+		"@defer.run/client": "1.0.0-alpha-20230224163353-d791d79"
 	}
 }
