@@ -1,41 +1,47 @@
-import { defer, init } from "@defer.run/client";
+import { defer, configure } from "@defer/client";
 interface Contact {
   id: string;
   name: string;
 }
 
-type State = "started" | "succeed" | "failed"
+type State = "started" | "succeed" | "failed";
 
 interface DemoOptions {
-  endState?: State
+  endState?: State;
 }
 
-init({
+configure({
   // apiUrl: "http://localhost:8080/api/v1/",
-  debug: true,
+  verbose: true,
 });
 
-const importContacts = (companyId: string, contacts: Contact[], options: DemoOptions = {}) => {
-  return new Promise<{ imported: number; companyId: string }>((resolve, reject) => {
-    let interval = 5000
-    console.log(`Start importing contacts for company#${companyId}`);
+const importContacts = (
+  companyId: string,
+  contacts: Contact[],
+  options: DemoOptions = {}
+) => {
+  return new Promise<{ imported: number; companyId: string }>(
+    (resolve, reject) => {
+      let interval = 5000;
+      console.log(`Start importing contacts for company#${companyId}`);
 
-    if (options.endState && options.endState === 'started') interval = 300000
+      if (options.endState && options.endState === "started") interval = 300000;
 
-    setTimeout(() => {
-      console.log(contacts);
-      switch(options.endState) {
-        case "failed":
-          reject(new Error('fail'));
-          break;
-        case "succeed":
-        default:
-          console.log("Done.");
-          resolve({ imported: 10000, companyId });
-          break;
-      }
-    }, interval);
-  });
+      setTimeout(() => {
+        console.log(contacts);
+        switch (options.endState) {
+          case "failed":
+            reject(new Error("fail"));
+            break;
+          case "succeed":
+          default:
+            console.log("Done.");
+            resolve({ imported: 10000, companyId });
+            break;
+        }
+      }, interval);
+    }
+  );
 };
 
-export default defer(importContacts);
+export default defer(importContacts, { concurrency: 10 });

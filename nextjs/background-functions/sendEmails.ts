@@ -1,27 +1,27 @@
-import { defer, init } from "@defer.run/client";
+import { defer, configure } from "@defer/client";
 
-type State = "started" | "succeed" | "failed"
+type State = "started" | "succeed" | "failed";
 
 interface DemoOptions {
-  endState?: State
+  endState?: State;
 }
 
-init({
+configure({
   // apiUrl: "http://localhost:8080/api/v1/",
-  debug: true,
+  verbose: true,
 });
 
 const sendEmails = (options: DemoOptions = {}) => {
   return new Promise<{ sent: number }>((resolve, reject) => {
-    let interval = 5000
+    let interval = 5000;
     console.log("Start sending emails");
 
-    if (options.endState && options.endState === 'started') interval = 300000
+    if (options.endState && options.endState === "started") interval = 300000;
 
     setTimeout(() => {
-      switch(options.endState) {
+      switch (options.endState) {
         case "failed":
-          reject(new Error('fail'));
+          reject(new Error("fail"));
           break;
         case "succeed":
         default:

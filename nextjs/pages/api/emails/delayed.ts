@@ -1,4 +1,4 @@
-import { delay } from "@defer.run/client";
+import { delay } from "@defer/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import sendEmails from "../../../background-functions/sendEmails";
 
@@ -10,7 +10,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const delayedSendEmails = delay(sendEmails, "1h")
-  await delayedSendEmails()
+  const delayedSendEmails = delay(sendEmails, "1h");
+  await delayedSendEmails();
   res.status(200).json({ ok: true });
 }

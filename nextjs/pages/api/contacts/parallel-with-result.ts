@@ -12,7 +12,9 @@ export default async function handler(
 ) {
   const result = await Promise.all([
     importContacts.await("1", [{ name: "Paul", id: "1" }]),
-    importContacts.await("2", [{ name: "Paul", id: "2" }]),
+    importContacts.await("2", [{ name: "Paul", id: "2" }], {
+      endState: "failed",
+    }),
     importContacts.await("3", [{ name: "Paul", id: "3" }]),
     importContacts.await("4", [{ name: "Paul", id: "4" }]),
     importContacts.await("5", [{ name: "Paul", id: "5" }]),
