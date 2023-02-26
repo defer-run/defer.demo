@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import importContactsProut from "../../../background-functions/importContacts";
+import importContactsProut from "../../../defer/importContacts";
 
 type Data = {
   ok: boolean;

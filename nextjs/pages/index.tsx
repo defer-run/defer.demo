@@ -15,7 +15,9 @@ const Home: NextPage = () => {
           <a href="https://defer.run">Defer</a> demo
         </h1>
 
-        <h2 className={styles.h2}><code>importContacts()</code> function</h2>
+        <h2 className={styles.h2}>
+          <code>importContacts()</code> function
+        </h2>
         <div className={styles.grid}>
           <Link href="/api/contacts/succeed">
             <div className={styles.card}>
@@ -28,26 +30,31 @@ const Home: NextPage = () => {
 
           <Link href="/api/contacts/failed">
             <div className={styles.card}>
-              <h3 style={{color: 'red'}}>
+              <h3 style={{ color: "red" }}>
                 <code>defer()</code>
               </h3>
-              <p style={{color: 'red'}}>Run a single import contact that will fail in the background</p>
+              <p style={{ color: "red" }}>
+                Run a single import contact that will fail in the background
+              </p>
             </div>
           </Link>
 
           <Link href="/api/contacts/started">
             <div className={styles.card}>
-              <h3 style={{color: 'orange'}}>
+              <h3 style={{ color: "orange" }}>
                 <code>defer()</code>
               </h3>
-              <p style={{color: 'orange'}}>Run a single import contact that will stay running in the background</p>
+              <p style={{ color: "orange" }}>
+                Run a single import contact that will stay running in the
+                background
+              </p>
             </div>
           </Link>
 
           <Link href="/api/contacts/parallel-with-result">
             <div className={styles.card}>
               <h3>
-                <code>defer.await()</code>
+                <code>waitResult(deferFn)</code>
               </h3>
               <p>
                 Process multiple import contacts in the background and get the
@@ -66,7 +73,9 @@ const Home: NextPage = () => {
           </Link>
         </div>
 
-        <h2 className={styles.h2}><code>sendEmails()</code> function</h2>
+        <h2 className={styles.h2}>
+          <code>sendEmails()</code> function
+        </h2>
         <div className={styles.grid}>
           <Link href="/api/emails/succeed">
             <div className={styles.card}>
@@ -79,19 +88,23 @@ const Home: NextPage = () => {
 
           <Link href="/api/emails/failed">
             <div className={styles.card}>
-              <h3 style={{color: 'red'}}>
+              <h3 style={{ color: "red" }}>
                 <code>defer()</code>
               </h3>
-              <p style={{color: 'red'}}>Send a single email that will fail in the background</p>
+              <p style={{ color: "red" }}>
+                Send a single email that will fail in the background
+              </p>
             </div>
           </Link>
 
           <Link href="/api/emails/started">
             <div className={styles.card}>
-              <h3 style={{color: 'orange'}}>
+              <h3 style={{ color: "orange" }}>
                 <code>defer()</code>
               </h3>
-              <p style={{color: 'orange'}}>Send a single email that will stay running in the background</p>
+              <p style={{ color: "orange" }}>
+                Send a single email that will stay running in the background
+              </p>
             </div>
           </Link>
 
@@ -101,8 +114,7 @@ const Home: NextPage = () => {
                 <code>defer.await()</code>
               </h3>
               <p>
-                Send multiple emails in the background and get the
-                final results
+                Send multiple emails in the background and get the final results
               </p>
             </div>
           </Link>

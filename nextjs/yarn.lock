@@ -17,17 +17,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@darkeyedevelopers/natural-cron.js@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@darkeyedevelopers/natural-cron.js/-/natural-cron.js-1.1.0.tgz#d77721f6ea5912d9d114db6b0dbe6aa26eb7b235"
-  integrity sha512-CBRydMA7ExsLF6Ukmhf5QeUcv64RVfS417MqRZhN97hle1bDTJuT91AwO1K7gez/41uLSH6We07TqNp/XeLryA==
-
-"@defer/client@1.0.0-alpha-20230225204901-04f4066":
-  version "1.0.0-alpha-20230225204901-04f4066"
-  resolved "https://registry.yarnpkg.com/@defer/client/-/client-1.0.0-alpha-20230225204901-04f4066.tgz#55082a6d39723ce9668c239d19ac1d3ab26028a7"
-  integrity sha512-p9o2gPNK3iFiCjWIhj7LCOAwtc6WkGf/wKxbqH4i49MuGodfXdMp3keoledZLujEfd8fcOdjZGzbAXxPZMbRdQ==
+"@defer/client@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@defer/client/-/client-1.0.0.tgz#92cb5634d22bfcbfb63e49f8b7d474d0ffd3f271"
+  integrity sha512-BFg+7Y2AkCJtycOyp4n0qB5sq1B3djiBzl45LwW030XO3IOyVxsAuM0WHnqteicnX03tAjF1yfCUL5eXXNt7/A==
   dependencies:
-    "@darkeyedevelopers/natural-cron.js" "^1.1.0"
     "@whatwg-node/fetch" "^0.2.9"
     parse-duration "^1.0.2"
 

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import importContacts from "../../../background-functions/importContacts";
+import importContacts from "../../../defer/importContacts";
 
 type Data = {
   ok: boolean;

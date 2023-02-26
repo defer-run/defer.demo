@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import sendEmails from "../../../background-functions/sendEmails";
+import sendEmails from "../../../defer/sendEmails";
 
 type Data = {
   ok: boolean;
