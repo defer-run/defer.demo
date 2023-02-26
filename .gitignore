@@ -38,3 +38,23 @@ next-env.d.ts
 public
 
 *.js
+
+
+# We don't want lockfiles in stacks, as people could use a different package manager
+# This part will be removed by `remix.init`
+remix/package-lock.json
+remix/yarn.lock
+remix/pnpm-lock.yaml
+remix/pnpm-lock.yml
+
+remix/node_modules
+
+remix/build
+remix/public/build
+remix/.env
+
+remix/cypress/screenshots
+remix/cypress/videos
+remix/postgres-data
+
+remix/app/styles/tailwind.css
