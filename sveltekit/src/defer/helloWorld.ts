@@ -1,4 +1,4 @@
-import { defer } from '@defer.run/client';
+import { defer } from '@defer/client';
 
 import { getName } from '$lib/utils/getName';
 
