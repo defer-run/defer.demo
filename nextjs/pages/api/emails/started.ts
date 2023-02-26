@@ -1,6 +1,5 @@
-import { isDeferExecution } from "@defer.run/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import sendEmails from "../../../background-functions/sendEmails";
+import sendEmails from "../../../defer/sendEmails";
 
 type Data = {
   ok: boolean;
@@ -14,8 +13,6 @@ export default async function handler(
   const deferExecution = await sendEmails({ endState: "started" });
   res.status(200).json({
     ok: true,
-    executionId: isDeferExecution(deferExecution)
-      ? deferExecution.id
-      : undefined,
+    executionId: deferExecution.id,
   });
 }

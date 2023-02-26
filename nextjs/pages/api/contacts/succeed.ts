@@ -1,6 +1,5 @@
-import { isDeferExecution } from "@defer.run/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import importContactsProut from "../../../background-functions/importContacts";
+import importContactsProut from "../../../defer/importContacts";
 
 type Data = {
   ok: boolean;
@@ -16,8 +15,6 @@ export default async function handler(
   ]);
   res.status(200).json({
     ok: true,
-    executionId: isDeferExecution(deferExecution)
-      ? deferExecution.id
-      : undefined,
+    executionId: deferExecution.id,
   });
 }
