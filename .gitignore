@@ -38,6 +38,7 @@ next-env.d.ts
 public
 
 *.js
+*.js.map
 
 
 # We don't want lockfiles in stacks, as people could use a different package manager
