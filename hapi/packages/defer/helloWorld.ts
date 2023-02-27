@@ -1,5 +1,5 @@
 import { defer } from "@defer/client";
-import { now } from "utils";
+import { now } from "utils/now";
 
 const helloWorld = (name: string) =>
   new Promise((resolve) => {

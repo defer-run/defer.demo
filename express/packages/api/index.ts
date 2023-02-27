@@ -1,7 +1,7 @@
 import express from "express";
 
 // we import our `helloWorld()` background function
-import { helloWorld } from "defer";
+import helloWorld from "defer/helloWorld";
 
 const app = express();
 const port = 3000;

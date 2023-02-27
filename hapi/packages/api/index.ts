@@ -1,7 +1,7 @@
 import Hapi from "@hapi/hapi";
 
 // we import our `helloWorld()` background function
-import { helloWorld } from "defer";
+import helloWorld from "defer/helloWorld";
 
 const init = async () => {
   const server = Hapi.server({
