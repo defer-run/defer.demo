@@ -7,7 +7,7 @@ interface DemoOptions {
 }
 
 configure({
-  // apiUrl: "http://localhost:8080/api/v1/",
+  endpoint: "http://localhost:8080/api/v1/",
   verbose: true,
 });
 
