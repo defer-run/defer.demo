@@ -1,9 +1,12 @@
 import { fail } from '@sveltejs/kit';
 import { Game } from './game';
 import type { PageServerLoad, Actions } from './$types';
+import helloWorld from '../../defer/helloWorld';
 
 export const load = (({ cookies }) => {
 	const game = new Game(cookies.get('sverdle'));
+
+	helloWorld();
 
 	return {
 		/**
