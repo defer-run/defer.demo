@@ -40,6 +40,8 @@ public
 *.js
 *.js.map
 
+!js-node-http/**/*.js
+
 remix/node_modules
 
 remix/.cache

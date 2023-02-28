@@ -1,0 +1,16 @@
+{
+  "name": "js-node-http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/api.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Charly POLY",
+  "license": "ISC",
+  "dependencies": {
+    "@defer/client": "^1.0.0"
+  }
+}
