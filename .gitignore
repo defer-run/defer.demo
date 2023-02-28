@@ -48,3 +48,5 @@ remix/.cache
 remix/build
 remix/public/build
 remix/.env
+
+nest/build
