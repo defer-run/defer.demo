@@ -8,5 +8,10 @@
   },
   "author": "Charly POLY",
   "license": "ISC",
-  "workspaces": ["packages/*"]
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
 }
