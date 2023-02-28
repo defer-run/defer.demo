@@ -4,6 +4,11 @@
   "main": "index.js",
   "author": "Charly POLY",
   "license": "MIT",
-  "workspaces": ["packages/*"],
-  "private": true
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }
