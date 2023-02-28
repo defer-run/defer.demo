@@ -1,19 +1,14 @@
-import { z } from "zod";
-import importContacts from "../../../background-functions/importContacts";
-import { env } from "../../../env/server.mjs";
+import helloWorld from "../../../defer/helloWorld";
 
 import { createTRPCRouter, publicProcedure, protectedProcedure } from "../trpc";
 
 export const exampleRouter = createTRPCRouter({
-  hello: publicProcedure
-    .input(z.object({ text: z.string() }))
-    .query(async ({ input }) => {
-      console.log(env.NODE_ENV);
-      await importContacts("1", []);
-      return {
-        greeting: `Hello ${input.text}`,
-      };
-    }),
+  hello: publicProcedure.query(async () => {
+    await helloWorld();
+    return {
+      greeting: `Hello`,
+    };
+  }),
 
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany();
