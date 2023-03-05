@@ -17,10 +17,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@defer/client@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@defer/client/-/client-1.0.0.tgz#92cb5634d22bfcbfb63e49f8b7d474d0ffd3f271"
-  integrity sha512-BFg+7Y2AkCJtycOyp4n0qB5sq1B3djiBzl45LwW030XO3IOyVxsAuM0WHnqteicnX03tAjF1yfCUL5eXXNt7/A==
+"@defer/client@1.1.0-alpha-20230305050756-949564f":
+  version "1.1.0-alpha-20230305050756-949564f"
+  resolved "https://registry.yarnpkg.com/@defer/client/-/client-1.1.0-alpha-20230305050756-949564f.tgz#ccb2308af787e4df1026c4e91bab672c48bdb4dc"
+  integrity sha512-lZJ++aI7DAa7vWKQtFvMUoAO2GF7WALWCwtRvMhDLAFXBH/KKuxQzV+cfZ1YppAUGLBBan0TsTLj8BE36OBmrg==
   dependencies:
     "@whatwg-node/fetch" "^0.2.9"
     parse-duration "^1.0.2"
@@ -195,6 +195,19 @@
   integrity sha512-6JrF+fdUK2zbGpJIlN7G3v966PQjyx/dPt1T9km2wj+EUBqgrxCk3uX4Kct16MIm9gGxfKRcfax2hVf5jvlTzA==
   dependencies:
     tslib "^2.4.0"
+
+"@tanstack/query-core@4.24.10":
+  version "4.24.10"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-4.24.10.tgz#758e1f5b2d7faf7316d299facd272a9f64c26299"
+  integrity sha512-2QywqXEAGBIUoTdgn1lAB4/C8QEqwXHj2jrCLeYTk2xVGtLiPEUD8jcMoeB2noclbiW2mMt4+Fq7fZStuz3wAQ==
+
+"@tanstack/react-query@^4.24.10":
+  version "4.24.10"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-4.24.10.tgz#2e1004bb1d1f55198961a21e875e2c65ec865130"
+  integrity sha512-FY1DixytOcNNCydPQXLxuKEV7VSST32CAuJ55BjhDNqASnMLZn+6c30yQBMrODjmWMNwzfjMZnq0Vw7C62Fwow==
+  dependencies:
+    "@tanstack/query-core" "4.24.10"
+    use-sync-external-store "^1.2.0"
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -1835,7 +1848,7 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-sync-external-store@1.2.0:
+use-sync-external-store@1.2.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
