@@ -8,6 +8,7 @@ type State = "started" | "succeed" | "failed";
 
 interface DemoOptions {
   endState?: State;
+  duration?: number;
 }
 
 configure({
@@ -22,7 +23,7 @@ const importContacts = (
 ) => {
   return new Promise<{ imported: number; companyId: string }>(
     (resolve, reject) => {
-      let interval = 5000;
+      let interval = options.duration || 5000;
       console.log(`Start importing contacts for company#${companyId}`);
 
       if (options.endState && options.endState === "started") interval = 300000;

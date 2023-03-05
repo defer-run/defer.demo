@@ -1,9 +1,43 @@
+import { FetchExecutionResponse } from "@defer/client";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useCallback, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 
+interface LongRunningResponse {
+  res: FetchExecutionResponse;
+}
+
 const Home: NextPage = () => {
+  const [pendingExecStatus, setPendingExecStatus] = useState<string>();
+  const intervalRef = useRef<number | null>();
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const pollExecution = (pendingExecId: string) => async () => {
+    const res = await fetch(`/api/longRunning/${pendingExecId}`, {
+      method: "POST",
+    });
+    const data = (await res.json()) as Promise<LongRunningResponse>;
+    setPendingExecStatus((await data).res.state);
+    if (
+      ["succeed", "failed"].includes((await data).res.state) &&
+      intervalRef.current
+    ) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  const triggerExecution = useCallback(async () => {
+    const res = await fetch(`/api/longRunning/trigger`, { method: "POST" });
+    const data = await res.json();
+    intervalRef.current = setInterval(
+      pollExecution(data.id),
+      500
+    ) as unknown as number;
+  }, [pollExecution]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -71,6 +105,19 @@ const Home: NextPage = () => {
               <p>Schedule the import contacts in 1 day</p>
             </div>
           </Link>
+
+          <div onClick={triggerExecution}>
+            <div className={styles.card}>
+              <h3>
+                <code>getExecution()</code>
+              </h3>
+              <p>
+                {pendingExecStatus
+                  ? `Status: ${pendingExecStatus}`
+                  : "Schedule the import and poll for status"}
+              </p>
+            </div>
+          </div>
         </div>
 
         <h2 className={styles.h2}>
