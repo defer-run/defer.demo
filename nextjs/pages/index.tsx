@@ -1,9 +1,33 @@
+import { FetchExecutionResponse } from "@defer/client";
+import { useQuery } from "@tanstack/react-query";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useCallback, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const [pendingExecId, setPendingExecId] = useState();
+
+  const { refetch, data } = useQuery<FetchExecutionResponse>(
+    ["execution", pendingExecId],
+    async () => {
+      return (
+        await fetch(`/api/longRunning/${pendingExecId}`, { method: "POST" })
+      ).json() as Promise<FetchExecutionResponse>;
+    },
+    {
+      refetchInterval: 500,
+      enabled: !!pendingExecId,
+    }
+  );
+
+  const triggerExecution = useCallback(async () => {
+    const res = await fetch(`/api/longRunning/trigger`, { method: "POST" });
+    const data = await res.json();
+    setPendingExecId(data.id);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -71,6 +95,19 @@ const Home: NextPage = () => {
               <p>Schedule the import contacts in 1 day</p>
             </div>
           </Link>
+
+          <div onClick={triggerExecution}>
+            <div className={styles.card}>
+              <h3>
+                <code>getExecution()</code>
+              </h3>
+              <p>
+                {data?.id
+                  ? "Schedule the import and poll for status"
+                  : `Status: ${data?.state}`}
+              </p>
+            </div>
+          </div>
         </div>
 
         <h2 className={styles.h2}>
