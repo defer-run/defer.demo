@@ -1,32 +1,42 @@
 import { FetchExecutionResponse } from "@defer/client";
-import { useQuery } from "@tanstack/react-query";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 
-const Home: NextPage = () => {
-  const [pendingExecId, setPendingExecId] = useState();
+interface LongRunningResponse {
+  res: FetchExecutionResponse;
+}
 
-  const { refetch, data } = useQuery<FetchExecutionResponse>(
-    ["execution", pendingExecId],
-    async () => {
-      return (
-        await fetch(`/api/longRunning/${pendingExecId}`, { method: "POST" })
-      ).json() as Promise<FetchExecutionResponse>;
-    },
-    {
-      refetchInterval: 500,
-      enabled: !!pendingExecId,
+const Home: NextPage = () => {
+  const [pendingExecStatus, setPendingExecStatus] = useState<string>();
+  const intervalRef = useRef<number | null>();
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const pollExecution = (pendingExecId: string) => async () => {
+    const res = await fetch(`/api/longRunning/${pendingExecId}`, {
+      method: "POST",
+    });
+    const data = (await res.json()) as Promise<LongRunningResponse>;
+    setPendingExecStatus((await data).res.state);
+    if (
+      ["succeed", "failed"].includes((await data).res.state) &&
+      intervalRef.current
+    ) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
     }
-  );
+  };
 
   const triggerExecution = useCallback(async () => {
     const res = await fetch(`/api/longRunning/trigger`, { method: "POST" });
     const data = await res.json();
-    setPendingExecId(data.id);
-  }, []);
+    intervalRef.current = setInterval(
+      pollExecution(data.id),
+      500
+    ) as unknown as number;
+  }, [pollExecution]);
 
   return (
     <div className={styles.container}>
@@ -102,9 +112,9 @@ const Home: NextPage = () => {
                 <code>getExecution()</code>
               </h3>
               <p>
-                {data?.id
-                  ? "Schedule the import and poll for status"
-                  : `Status: ${data?.state}`}
+                {pendingExecStatus
+                  ? `Status: ${pendingExecStatus}`
+                  : "Schedule the import and poll for status"}
               </p>
             </div>
           </div>
