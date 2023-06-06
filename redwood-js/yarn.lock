@@ -2065,13 +2065,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@defer/client@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@defer/client@npm:1.0.0"
+"@defer/client@npm:latest":
+  version: 1.4.0
+  resolution: "@defer/client@npm:1.4.0"
   dependencies:
     "@whatwg-node/fetch": ^0.2.9
     parse-duration: ^1.0.2
-  checksum: 0bdc08a5617dffcd0002e7f942b952691e4540694de8938c57c890a93de9cd053cfd5288b063712ccba29b36a1de754de1704dc639250fd72d96b07d36ceaf55
+  checksum: 67ccb5b3ad2502c734a70e77493fd184d82e6b5e99c97b9ca116cef5649bc2f62d2e2e1b77f1b92e4a5961147fc6fafd824e0cf6c1886f437edc6c06ad12cd6f
   languageName: node
   linkType: hard
 
@@ -21054,7 +21054,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@defer/client": ^1.0.0
+    "@defer/client": latest
     "@redwoodjs/core": 4.2.0
   languageName: unknown
   linkType: soft

@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@defer/client@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@defer/client/-/client-1.0.0.tgz#92cb5634d22bfcbfb63e49f8b7d474d0ffd3f271"
-  integrity sha512-BFg+7Y2AkCJtycOyp4n0qB5sq1B3djiBzl45LwW030XO3IOyVxsAuM0WHnqteicnX03tAjF1yfCUL5eXXNt7/A==
+"@defer/client@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@defer/client/-/client-1.4.0.tgz#a65b59635bdf1b45e89bf349a70e84b72a85af1c"
+  integrity sha512-FdwXo0PgvjWUuUBuMYDQvFRW0z1GKX4Wawd9vS1vOGou2zn6tuUZryY9bBs/oBNGCKff/HqHoE2HnXUAAN0A8A==
   dependencies:
     "@whatwg-node/fetch" "^0.2.9"
     parse-duration "^1.0.2"

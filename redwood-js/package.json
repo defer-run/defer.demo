@@ -22,6 +22,6 @@
   },
   "packageManager": "yarn@3.4.1",
   "dependencies": {
-    "@defer/client": "^1.0.0"
+    "@defer/client": "latest"
   }
 }
