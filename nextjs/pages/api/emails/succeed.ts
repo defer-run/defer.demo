@@ -1,5 +1,6 @@
+import { addMetadata } from "@defer/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import sendEmails from "../../../defer/sendEmails";
+import sendEmailsFn from "../../../defer/sendEmails";
 
 type Data = {
   ok: boolean;
@@ -10,6 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  const sendEmails = addMetadata(sendEmailsFn, { email: 'charly@defer.run' })
   const deferExecution = await sendEmails();
   res.status(200).json({
     ok: true,
