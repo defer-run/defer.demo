@@ -36,9 +36,10 @@ const parentContacts = (
             break;
           case "succeed":
           default:
-            importContacts(companyId, contacts, options);
-            console.log("Done.");
-            resolve({ imported: 10000, companyId });
+            importContacts(companyId, contacts, options).then(() => {
+              console.log("Done.");
+              resolve({ imported: 10000, companyId });
+            });
             break;
         }
       }, interval);
