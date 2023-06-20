@@ -106,6 +106,15 @@ const Home: NextPage = () => {
             </div>
           </Link>
 
+          <Link href="/api/contacts/workflow">
+            <div className={styles.card}>
+              <h3>
+                <code>defer in defer</code>
+              </h3>
+              <p>Run a workflow</p>
+            </div>
+          </Link>
+
           <div onClick={triggerExecution}>
             <div className={styles.card}>
               <h3>

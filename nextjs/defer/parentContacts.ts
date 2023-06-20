@@ -1,4 +1,5 @@
 import { defer, configure } from "@defer/client";
+import importContacts from "./importContacts";
 interface Contact {
   id: string;
   name: string;
@@ -15,7 +16,7 @@ configure({
   verbose: true,
 });
 
-const importContacts = (
+const parentContacts = (
   companyId: string,
   contacts: Contact[],
   options: DemoOptions = {}
@@ -35,6 +36,7 @@ const importContacts = (
             break;
           case "succeed":
           default:
+            importContacts(companyId, contacts, options);
             console.log("Done.");
             resolve({ imported: 10000, companyId });
             break;
@@ -44,4 +46,4 @@ const importContacts = (
   );
 };
 
-export default defer(importContacts, { concurrency: 10 });
+export default defer(parentContacts, { concurrency: 10 });
