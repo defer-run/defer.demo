@@ -2,7 +2,7 @@ import { FetchExecutionResponse } from "@defer/client";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useCallback, useRef, useState } from "react";
+import { MouseEventHandler, useCallback, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 interface LongRunningResponse {
@@ -37,6 +37,21 @@ const Home: NextPage = () => {
       500
     ) as unknown as number;
   }, [pollExecution]);
+
+  const delayAndCancel: MouseEventHandler<HTMLAnchorElement> = useCallback(
+    async (e) => {
+      e.preventDefault();
+      const res = await fetch(`/api/contacts/succeed`, { method: "POST" });
+      const data = await res.json();
+
+      setTimeout(async () => {
+        await fetch(`/api/contacts/cancel?executionID=${data.executionId}`, {
+          method: "POST",
+        });
+      }, 2000);
+    },
+    []
+  );
 
   return (
     <div className={styles.container}>
@@ -103,6 +118,17 @@ const Home: NextPage = () => {
                 <code>defer.delayed()</code>
               </h3>
               <p>Schedule the import contacts in 1 day</p>
+            </div>
+          </Link>
+
+          <Link href="#" onClick={delayAndCancel}>
+            <div className={styles.card}>
+              <h3>
+                <code>defer.delayed() and cancelExecution()</code>
+              </h3>
+              <p>
+                Schedule the import contacts in 1 day and cancel the execution
+              </p>
             </div>
           </Link>
 

@@ -4,6 +4,7 @@ import importContacts from "../../../defer/importContacts";
 
 type Data = {
   ok: boolean;
+  executionId: string;
 };
 
 export default async function handler(
@@ -11,6 +12,6 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const delayedImportContacts = delay(importContacts, "1d");
-  await delayedImportContacts("1", []);
-  res.status(200).json({ ok: true });
+  const { id } = await delayedImportContacts("1", []);
+  res.status(200).json({ ok: true, executionId: id });
 }
