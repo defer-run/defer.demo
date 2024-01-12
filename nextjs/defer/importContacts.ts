@@ -44,4 +44,4 @@ const importContacts = (
   );
 };
 
-export default defer(importContacts, { concurrency: 10 });
+export default defer(importContacts, { concurrency: 10, retry: 6 });
