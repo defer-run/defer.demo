@@ -1,15 +1,10 @@
-import { defer, configure } from "@defer/client";
+import { defer } from "@defer/client";
 
 type State = "started" | "succeed" | "failed";
 
 interface DemoOptions {
   endState?: State;
 }
-
-configure({
-  // apiUrl: "http://localhost:8080/api/v1/",
-  verbose: true,
-});
 
 const sendEmails = (options: DemoOptions = {}) => {
   return new Promise<{ sent: number }>((resolve, reject) => {

@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@defer/client": "1.8.0",
+    "@defer/client": "2.0.0",
     "next": "^13.4.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"

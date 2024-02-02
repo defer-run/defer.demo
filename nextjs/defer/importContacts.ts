@@ -1,4 +1,4 @@
-import { defer, configure } from "@defer/client";
+import { defer } from "@defer/client";
 interface Contact {
   id: string;
   name: string;
@@ -10,10 +10,6 @@ interface DemoOptions {
   endState?: State;
   duration?: number;
 }
-
-configure({
-  verbose: true,
-});
 
 const importContacts = (
   companyId: string,
