@@ -11,6 +11,6 @@
   "author": "Charly POLY",
   "license": "ISC",
   "dependencies": {
-    "@defer/client": "^1.8.0"
+    "@defer/client": "^2.0.0"
   }
 }
