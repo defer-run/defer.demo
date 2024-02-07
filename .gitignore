@@ -41,6 +41,7 @@ public
 *.js.map
 
 !js-node-http/**/*.js
+!scripts/**/*.js
 
 remix/node_modules
 
