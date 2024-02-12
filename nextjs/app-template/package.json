@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@defer/client": "2.1.0-alpha-20240207114445-7b0f26b2cc2cedc3426f5201e82d690a2ee06e5f",
+    "@defer/client": "2.1.0",
     "autoprefixer": "10.4.17",
     "date-fns": "^3.3.1",
     "geist": "^1.2.1",
