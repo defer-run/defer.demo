@@ -29,6 +29,12 @@ Defer makes it easy to schedule and offload long-running tasks, without leaving 
 
 <br />
 
+This Next.js Demo comes with a [CRON](./defer/dailyCron.ts) and 2 examples of Background Functions.
+
+See how Defer fits perfectly with [Next.js Server Actions](./app/actions/actions.ts), enabling you to trigger Background Functions from [Client-Side Components](./app/page.tsx).
+
+<br />
+
 ## Demo
 
 You can view a fully working demo at [demo-nextjs-with-defer.vercel.app](https://demo-nextjs-with-defer.vercel.app/).
