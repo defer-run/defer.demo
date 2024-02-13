@@ -5,11 +5,14 @@ import fifoTask from "@/defer/fifoTask";
 import longRunningTask from "@/defer/longRunningTask";
 import { assignOptions, listExecutions, reRunExecution } from "@defer/client";
 
+// Next.js Server Actions are perfect way to trigger Defer Background functions
+//  from Client-Side Components
+
 export async function listTasks() {
   return await listExecutions();
 }
 
-export async function reRun(executionId: string) {
+export async function reRunTask(executionId: string) {
   return await reRunExecution(executionId);
 }
 
@@ -17,7 +20,7 @@ export async function runLongRunningTask() {
   return await longRunningTask();
 }
 
-export async function triggerCron() {
+export async function runCron() {
   const delayedCronRun = assignOptions(dailyCron, { delay: "10s" });
   return await delayedCronRun();
 }

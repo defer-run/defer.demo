@@ -5,5 +5,5 @@ async function dailyCron() {
 }
 
 export default defer.cron(dailyCron, "0 8 * * *", {
-  maxDuration: 60 * 60, // 1h
+  maxDuration: 60 * 60, // run up to 1h without timeout
 });

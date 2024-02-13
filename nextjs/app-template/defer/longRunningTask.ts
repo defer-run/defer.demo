@@ -2,6 +2,7 @@ import { performLongRunningTask } from "@/utils/performLongRunningTask";
 import { defer } from "@defer/client";
 
 async function longRunningTask() {
+  // runs a fake task for 30s
   await performLongRunningTask();
 }
 

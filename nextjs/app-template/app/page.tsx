@@ -1,51 +1,43 @@
 "use client";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "./logo.png";
-import {
-  listTasks,
-  reRun,
-  runLongRunningTask,
-  runManyFIFOTasks,
-  triggerCron,
-} from "./actions/actions";
-import { useEffect, useState } from "react";
-import {
-  ExecutionState,
-  ListExecutionsResult,
-} from "@defer/client/typings/backend";
+import { ListExecutionsResult } from "@defer/client/typings/backend";
 import { differenceInSeconds, format, parseISO } from "date-fns";
 
-const stateToText: { [k in ExecutionState]: string } = {
-  aborted: "Aborted",
-  aborting: "Aborting",
-  cancelled: "Canceled",
-  created: "Queued",
-  discarded: "Discarded",
-  failed: "Failed",
-  started: "Running",
-  succeed: "Succeed",
-};
-const stateToColor: { [k in ExecutionState]: [bg: string, text: string] } = {
-  aborted: ["#282828", "#b1b1b1"],
-  aborting: ["#2c230a", "#ffee33"],
-  cancelled: ["#282828", "#b1b1b1"],
-  created: ["#282828", "#b1b1b1"],
-  discarded: ["#282828", "#b1b1b1"],
-  failed: ["#3b191d", "#ff8589"],
-  started: ["#2c230a", "#ffee33"],
-  succeed: ["#12281f", "#3dd68c"],
-};
+import {
+  listTasks,
+  reRunTask,
+  runLongRunningTask,
+  runManyFIFOTasks,
+  runCron,
+} from "./actions/actions";
+import { stateToColor, stateToText } from "../utils/executionStateHelpers";
+
+import logo from "./logo.png";
 
 export default function Index() {
   const [tasks, updateTasks] = useState<ListExecutionsResult | undefined>();
 
   useEffect(() => {
     const interval = setInterval(
+      // leverafe Server Actions to regurarly refresh the tasks list
       () => listTasks().then((data) => updateTasks(data)),
       1000
     );
     return () => clearInterval(interval);
   });
+
+  const triggerLongRunningTask = useCallback(
+    () => runLongRunningTask(),
+    [runLongRunningTask]
+  );
+
+  const triggerManyTasks = useCallback(
+    () => runManyFIFOTasks(),
+    [runManyFIFOTasks]
+  );
+
+  const triggerCron = useCallback(() => runCron(), [runCron]);
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
@@ -88,7 +80,7 @@ export default function Index() {
             <div className="flex justify-end">
               <button
                 className="py-1 px-2 bg-black text-white flex rounded-md no-underline hover:bg-gray-800 border"
-                onClick={() => runLongRunningTask()}
+                onClick={triggerLongRunningTask}
               >
                 Trigger now
               </button>
@@ -106,7 +98,7 @@ export default function Index() {
             <div className="flex justify-end">
               <button
                 className="py-1 px-2 bg-black text-white flex rounded-md no-underline hover:bg-gray-800 border"
-                onClick={() => runManyFIFOTasks()}
+                onClick={triggerManyTasks}
               >
                 Trigger 10 runs now
               </button>
@@ -124,7 +116,7 @@ export default function Index() {
             <div className="flex justify-end">
               <button
                 className="py-1 px-2 bg-black text-white flex rounded-md no-underline hover:bg-gray-800 border"
-                onClick={() => triggerCron()}
+                onClick={triggerCron}
               >
                 Trigger in 10 secs
               </button>
@@ -189,7 +181,7 @@ export default function Index() {
                         <td className="p-[16px] flex justify-end">
                           {["succeed", "failed"].includes(state) && (
                             <button
-                              onClick={() => reRun(id)}
+                              onClick={() => reRunTask(id)}
                               className="py-1 px-2 bg-black text-white flex rounded-md no-underline hover:bg-gray-800 border"
                             >
                               Rerun
