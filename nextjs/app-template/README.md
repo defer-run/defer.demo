@@ -60,7 +60,7 @@ You can view a fully working demo at [demo-nextjs-with-defer.vercel.app](https:/
 1. Create a Next.js app using this template with the `npx command`:
 
    ```bash
-   npx create-next-app -e https://github.com/defer-run/defer.demo/tree/master/nextjs/app-template/
+   npx create-next-app -e https://github.com/defer-run/defer.demo/tree/master/nextjs/app-template
    ```
 
 2. Use `cd` to change into the app's directory
