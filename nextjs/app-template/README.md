@@ -1,5 +1,7 @@
 <a href="https://demo-nextjs-with-defer.vercel.app/">
-  <img alt="Next.js and Defer Demo" src="https://demo-nextjs-with-defer.vercel.app/og-image.png">
+
+![Defer Demo template](./app/og_image.png)
+
   <h1 align="center">Next.js and Defer Demo</h1>
 </a>
 
