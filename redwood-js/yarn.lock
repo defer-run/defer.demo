@@ -2065,17 +2065,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@defer/client@npm:1.8.0":
-  version: 1.8.0
-  resolution: "@defer/client@npm:1.8.0"
+"@defer/client@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@defer/client@npm:2.0.0"
   dependencies:
-    "@whatwg-node/fetch": ^0.9.7
-    parse-duration: ^1.0.2
-    uuid: ^9.0.0
-  peerDependencies:
-    next: ^13.4.7
-    react: ^18.2.0
-  checksum: 732011e64b3634d6d71c1b54fcdefdaa05484c2315c9ce10e134b767b6bb8a5060727be6c26b0cc4cc912a79bc2938a428bfc242a86f64ddddfe231ef68e54a7
+    parse-duration: ^1.1.0
+  checksum: ec4ba05f3276522a82948407b0336e643595d7057088fd47d8b75be878a086af01076b3f3674a01d07bbcea583533565222f5f4945d1bb037d7ea087ba63c851
   languageName: node
   linkType: hard
 
@@ -7496,13 +7491,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@whatwg-node/events@npm:^0.1.0":
-  version: 0.1.1
-  resolution: "@whatwg-node/events@npm:0.1.1"
-  checksum: 7e4678c8c092484dc248f4a229a398de30d21190b94ebebc333c2187180207a18e257c4588d0910e872251b3089007f4a2a3ff8b9a4d057fae94db8da28be467
-  languageName: node
-  linkType: hard
-
 "@whatwg-node/fetch@npm:0.8.1, @whatwg-node/fetch@npm:^0.8.0, @whatwg-node/fetch@npm:^0.8.1":
   version: 0.8.1
   resolution: "@whatwg-node/fetch@npm:0.8.1"
@@ -7526,16 +7514,6 @@ __metadata:
     urlpattern-polyfill: ^6.0.2
     web-streams-polyfill: ^3.2.1
   checksum: 849f88d81360f85c0e6528fb5bd4ec55d198e463be198d6a69fd51cc7a64acccef16682e0978861e7497ddbe1e1a842a11827931f4a261bfc740a09517ea271d
-  languageName: node
-  linkType: hard
-
-"@whatwg-node/fetch@npm:^0.9.7":
-  version: 0.9.8
-  resolution: "@whatwg-node/fetch@npm:0.9.8"
-  dependencies:
-    "@whatwg-node/node-fetch": ^0.4.7
-    urlpattern-polyfill: ^9.0.0
-  checksum: 14c618c2e2ce1b8a451f031613a28f8884657672001eab505d4a1e5a1d3b4e8beda20a29acd40b36b292d0a7fdfed9a11576d96ea91d51ed73d6795e8c9e7882
   languageName: node
   linkType: hard
 
@@ -7564,19 +7542,6 @@ __metadata:
   peerDependencies:
     "@types/node": ^18.0.6
   checksum: 894393c9a8655b20ed8ad53ccc43ef6e8e6d93298e663794122ad8aaa54cd198411783d6e93811bbf9a4a575f33398bb0204653abb05cbf7851e8e6207efc0cb
-  languageName: node
-  linkType: hard
-
-"@whatwg-node/node-fetch@npm:^0.4.7":
-  version: 0.4.7
-  resolution: "@whatwg-node/node-fetch@npm:0.4.7"
-  dependencies:
-    "@whatwg-node/events": ^0.1.0
-    busboy: ^1.6.0
-    fast-querystring: ^1.1.1
-    fast-url-parser: ^1.1.3
-    tslib: ^2.3.1
-  checksum: 758303ccb944afba22ec02ac0d660a26cf417572ba4580160d1c28b3632a446f021cd59c4722887bed0c86e23b53074fd1d8812762dce6a4644e82b001df241c
   languageName: node
   linkType: hard
 
@@ -18721,10 +18686,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse-duration@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "parse-duration@npm:1.0.2"
-  checksum: d28d6a77dc1df487ea3405c6518770f066aac6aa6cb44858113976a9cfbc258af3ab06c10e04d135d38b489bcd22d9f4b45c6902ab92099357661038e80a8b37
+"parse-duration@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "parse-duration@npm:1.1.0"
+  checksum: 26fd83ed8f34b11a6ddb4553c97f4a75decc7a42ffa10c3e998287930cdbd91f27b7958bf5461be3b709bd064245ddccf43566ad8f4daaed2c983f5a7c7f8aed
   languageName: node
   linkType: hard
 
@@ -20996,7 +20961,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@defer/client": 1.8.0
+    "@defer/client": 2.0.0
     "@redwoodjs/core": 4.2.1
   languageName: unknown
   linkType: soft
@@ -23597,13 +23562,6 @@ __metadata:
   dependencies:
     braces: ^3.0.2
   checksum: 28301775a23ae371ea02798d4a94d65ee894cdab4ede0d2b82f8d3642804febeb145900c1bce65d1d075ed942ac2ee58c193f3f6b2498f274a06e407cba5e019
-  languageName: node
-  linkType: hard
-
-"urlpattern-polyfill@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "urlpattern-polyfill@npm:9.0.0"
-  checksum: 1fecb4a7695ad7917b02193896ec7b5773bb730ee3fbbb583cfaf134cc99da054c18560a35e7e901ad4e2f7a6035b6754313a2bb84126a7f118201427d465185
   languageName: node
   linkType: hard
 

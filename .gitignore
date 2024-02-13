@@ -41,6 +41,11 @@ public
 *.js.map
 
 !js-node-http/**/*.js
+!scripts/**/*.js
+!nextjs/**/*.js
+
+nextjs/app-template/package-lock.json
+nextjs/app-template/node_modules
 
 remix/node_modules
 
