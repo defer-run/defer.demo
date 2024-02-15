@@ -1,6 +1,6 @@
 <a href="https://nextjs-with-defer-resend.vercel.app/">
 
-![Defer Demo template](./app/og_image.png)
+![Defer with Resend template](./app/og_image.png)
 
   <h1 align="center">Next.js with Resend and Defer</h1>
 </a>
@@ -62,7 +62,7 @@ You can view a fully working demo at [nextjs-with-defer-resend.vercel.app](https
 1. Create a Next.js app using this template with the `npx command`:
 
    ```bash
-   npx create-next-app -e https://github.com/defer-run/defer.demo/tree/master/nextjs/app-template
+   npx create-next-app -e https://github.com/defer-run/defer.demo/tree/master/nextjs/resend-template
    ```
 
 2. Use `cd` to change into the app's directory
