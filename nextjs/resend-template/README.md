@@ -1,9 +1,6 @@
-<a href="https://nextjs-with-defer-resend.vercel.app/">
-
 ![Defer with Resend template](./app/og_image.png)
 
-  <h1 align="center">Next.js with Resend and Defer</h1>
-</a>
+<h1 align="center">Next.js with Resend and Defer</h1>
 
 <p align="center">
  Offload or schedule the sending of emails to Defer while benefiting from Resend rich emails.
@@ -34,12 +31,6 @@ By combining Defer and Resend, send and schedule rich-styled emails in minutes, 
 This Next.js Demo comes with a CRON sending multiple monthly usage report emails with an attached PDF invoice.
 
 See how Defer fits perfectly with [Next.js Server Actions](./app/actions/actions.ts), enabling you to trigger Background Functions from [Client-Side Components](./app/page.tsx).
-
-<br />
-
-## Demo
-
-You can view a fully working demo at [nextjs-with-defer-resend.vercel.app](https://nextjs-with-defer-resend.vercel.app/).
 
 <br />
 

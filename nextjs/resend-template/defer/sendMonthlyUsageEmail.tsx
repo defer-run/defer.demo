@@ -39,7 +39,10 @@ const ExecutionsDetail = () => (
 
 const resend = new Resend(process.env.RESEND_API_KEY || "");
 
-async function sendMonthlyUsage(_userId: string) {
+async function sendMonthlyUsage(
+  _userId: string,
+  to = "<your_test_email@example.com>"
+) {
   const pdf = await renderToBuffer(<ExecutionsDetail />);
 
   const title = `You performed ${new Intl.NumberFormat().format(
@@ -48,7 +51,7 @@ async function sendMonthlyUsage(_userId: string) {
 
   await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "<your_test_email@example.com>",
+    to,
     subject: title,
     html: title,
     react: MonthlyUsageEmail({
