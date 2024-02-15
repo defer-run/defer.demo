@@ -48,7 +48,7 @@ async function sendMonthlyUsage(_userId: string) {
 
   await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "charly@defer.run",
+    to: "<your_test_email@example.com>",
     subject: title,
     html: title,
     react: MonthlyUsageEmail({
