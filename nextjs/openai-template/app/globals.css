@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 20% 98%;
+    --btn-background: 200 10% 91%;
+    --btn-background-hover: 200 10% 89%;
+    --foreground: 200 50% 3%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 200 50% 3%;
+      --btn-background: 200 10% 9%;
+      --btn-background-hover: 200 10% 12%;
+      --foreground: 200 20% 96%;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-foreground/20;
+  }
+}
+
+.animate-in {
+  animation: animateIn 0.3s ease 0.15s both;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input {
+  outline: none;
+  box-sizing: border-box;
+  flex: 1;
+  padding: 6px 12px;
+  color: #000;
+  background-color: #EDEDED;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  margin-right: 6px;
+  width: 265px;
+}
+
+
+.codeblock-container {
+  position: relative;
+  padding: 22px 16px;
+  background: rgb(40, 40, 40) !important;
+  color: hsl(0,0%,93.0%);
+  font-family: "IBM Plex Mono",Courier,Roboto Mono,Inconsolata, Source Code Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 8px;
+  margin: 0 0 40px 0;
+  padding-right: 30px;
+}
+
+.codeblock-content {
+  padding-right: 57px;
+  max-width: 700px;
+}
+
+.codeblock-copy-btn {
+  z-index: 42;
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  cursor: pointer;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.input:focus {
+  background-color: #E8E8E8;
+  box-shadow: inset 0px 0px 0px 1.5px #ededed;
+}
+.input:hover {
+  background-color: #E8E8E8;
+}
+
+.input::placeholder {
+  color: #000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
