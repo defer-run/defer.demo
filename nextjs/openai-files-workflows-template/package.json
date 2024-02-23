@@ -5,6 +5,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "bun": "1.x"
+  },
   "dependencies": {
     "@defer/client": "latest",
     "@octokit/graphql": "^7.0.2",
