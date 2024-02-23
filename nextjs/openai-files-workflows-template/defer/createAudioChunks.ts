@@ -21,7 +21,6 @@ async function fetchVideoToDisk() {
 //  background functions for transcripting with OpenAI Whisper
 export async function createAudioChunks(meetingID: string) {
   async function processChunkTranscript(chunkIdx: number) {
-    console.timeStamp();
     console.log(`chunk created: out00${chunkIdx}.mp3`);
     // 3. forward the chunk file to a child execution
     const file = Bun.file(`out00${chunkIdx}.mp3`);
@@ -34,7 +33,6 @@ export async function createAudioChunks(meetingID: string) {
     );
   }
 
-  console.timeStamp();
   console.log("downloading meeting video file...");
   // 1. download a demo video as a video meeting source
   await fetchVideoToDisk();
@@ -42,37 +40,46 @@ export async function createAudioChunks(meetingID: string) {
   let chunk = 0;
   let remaining = true;
 
-  console.timeStamp();
-  console.log(
-    "splitting the meeting video file into small audio chunk files..."
-  );
   // 2. Split the meeting video into chunks for OpenAI Whisper API
-  ffmpeg("meeting-video.mp4") // we use a local test video
-    .addOutputOptions("-f segment")
-    .addOutputOptions(`-segment_time 0${CHUNK_SIZE_IN_MIN}:00`)
-    .addOutputOptions("-reset_timestamps 1")
-    .output("out%03d.mp3")
-    .on("progress", async function (info) {
-      // we hack a bit around the `info.timemark` to detect available chunks
-      //  and start the OpenAI transcript in parallel
-      remaining = true;
-      const newChunk = Math.floor(
-        parseInt(info.timemark.substr(3, 2), 10) / CHUNK_SIZE_IN_MIN
-      );
-      if (newChunk != chunk) {
-        // let's ensure the file is written on disk before reading it
-        while (!existsSync(`out00${chunk}.mp3`)) {}
-        await processChunkTranscript(chunk);
-        chunk++;
-        remaining = false;
-      }
-    })
-    .on("end", async function () {
-      if (remaining) {
-        await processChunkTranscript(chunk);
-      }
-    })
-    .run();
+  return new Promise<void>((resolve, reject) => {
+    console.log(
+      "splitting the meeting video file into small audio chunk files..."
+    );
+    ffmpeg("meeting-video.mp4") // we use a local test video
+      .addOutputOptions("-f segment")
+      .addOutputOptions(`-segment_time 0${CHUNK_SIZE_IN_MIN}:00`)
+      .addOutputOptions("-reset_timestamps 1")
+      .output("out%03d.mp3")
+      .on("progress", async function (info: any) {
+        console.log("progress", info);
+        if (info.percent < 0) {
+          return;
+        }
+        // we hack a bit around the `info.timemark` to detect available chunks
+        //  and start the OpenAI transcript in parallel
+        remaining = true;
+        const newChunk = Math.floor(
+          parseInt(info.timemark.substr(3, 2), 10) / CHUNK_SIZE_IN_MIN
+        );
+        if (newChunk != chunk) {
+          // let's ensure the file is written on disk before reading it
+          while (!existsSync(`out00${chunk}.mp3`)) {}
+          await processChunkTranscript(chunk);
+          chunk++;
+          remaining = false;
+        }
+      })
+      .on("end", async function () {
+        if (remaining) {
+          await processChunkTranscript(chunk);
+        }
+        resolve();
+      })
+      .on("error", async function (e: any) {
+        reject(e);
+      })
+      .run();
+  });
 }
 
 export default defer(createAudioChunks, { concurrency: 10, retry: 2 });
