@@ -11,7 +11,7 @@ const CHUNK_SIZE_IN_MIN = 6;
 async function fetchVideoToDisk() {
   const stream = createWriteStream("meeting-video.mp4");
   const { body } = await fetch(
-    "https://github.com/defer-run/defer.demo/raw/create-next-app-openai-files-workflows-template/nextjs/openai-files-workflows-template/meeting-video.mp4"
+    "https://github.com/defer-run/defer.demo/raw/master/nextjs/openai-files-workflows-template/meeting-video.mp4"
   );
   return finished(Readable.fromWeb(body as any).pipe(stream), console.error);
 }
