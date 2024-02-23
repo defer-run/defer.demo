@@ -21,6 +21,7 @@ async function fetchVideoToDisk() {
 //  background functions for transcripting with OpenAI Whisper
 export async function createAudioChunks(meetingID: string) {
   async function processChunkTranscript(chunkIdx: number) {
+    console.timeStamp();
     console.log(`chunk created: out00${chunkIdx}.mp3`);
     // 3. forward the chunk file to a child execution
     const file = Bun.file(`out00${chunkIdx}.mp3`);
@@ -33,6 +34,7 @@ export async function createAudioChunks(meetingID: string) {
     );
   }
 
+  console.timeStamp();
   console.log("downloading meeting video file...");
   // 1. download a demo video as a video meeting source
   await fetchVideoToDisk();
@@ -40,6 +42,7 @@ export async function createAudioChunks(meetingID: string) {
   let chunk = 0;
   let remaining = true;
 
+  console.timeStamp();
   console.log(
     "splitting the meeting video file into small audio chunk files..."
   );
