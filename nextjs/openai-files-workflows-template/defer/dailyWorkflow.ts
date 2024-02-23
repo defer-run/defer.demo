@@ -1,5 +1,5 @@
 import { defer } from "@defer/client";
-import { createAudioChunks } from "./createAudioChunks";
+import createAudioChunks from "./createAudioChunks";
 
 async function dailyWorkflow() {
   const ids = ["1"];
