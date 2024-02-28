@@ -7,9 +7,9 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js, Resend and Defer Demo",
+  title: "User notification workflow builder",
   description:
-    "Leverage Defer to schedule or offloading the sending of rich emails with Resend",
+    "Experiment with the following workflow notificiation builder, built with Defer",
 };
 
 export default function RootLayout({

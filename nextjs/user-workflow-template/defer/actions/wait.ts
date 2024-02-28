@@ -1,10 +1,21 @@
-import { defer } from "@defer/client";
-import { ActionFunction, invokeNextStep } from "../workflow";
+import { assignOptions, defer } from "@defer/client";
+import { ActionFunction, invokeNextStep } from "@/utils/workflow";
 
-type Seconds = number;
-
-const wait: ActionFunction = async (step, time: Seconds) => {
-  await invokeNextStep(step!, { delay: `${time}s` });
+const wait: ActionFunction = async (
+  step,
+  seconds: number,
+  scheduleOnly = true
+) => {
+  if (scheduleOnly) {
+    const self = assignOptions(deferredWait, {
+      delay: `${seconds}s`,
+      metadata: { workflowID: step?.workflowID! },
+    });
+    await self(step, seconds, false);
+  } else {
+    await invokeNextStep(step!);
+  }
 };
 
-export default defer(wait);
+const deferredWait = defer(wait, { concurrency: 100 });
+export default deferredWait;
