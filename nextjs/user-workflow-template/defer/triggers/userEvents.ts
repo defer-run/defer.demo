@@ -7,13 +7,13 @@ import workflow from "../workflow";
 async function triggerUserEvents(workflowID: string, steps: Step[]) {
   let events = 1000;
   while (events > 0) {
-    let num = Math.floor(Math.random() * 100) + 1;
+    let num = Math.floor(Math.random() * 100) + 20;
     events -= num;
     if (events < 0) {
       num += events;
     }
 
-    await sleep(Math.floor(Math.random() * 1000) + 1);
+    await sleep(Math.floor(Math.random() * 2000) + 1000);
 
     for (let index = 0; index < num; index++) {
       await workflow(workflowID, steps);
