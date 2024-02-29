@@ -1,6 +1,5 @@
 "use client";
 import { ChangeEventHandler, useCallback, useEffect, useState } from "react";
-import { ListExecutionsResult } from "@defer/client/typings/backend";
 import Image from "next/image";
 import ReactFlow, {
   useNodesState,
@@ -10,10 +9,10 @@ import ReactFlow, {
   Edge,
   Position,
   MarkerType,
-  useReactFlow,
   ReactFlowProvider,
   ReactFlowInstance,
 } from "reactflow";
+import { ListExecutionsResult } from "@defer/client/typings/backend";
 
 import { Action, Step, broofa } from "@/utils/workflow";
 import { listStepsStatus, runWorkflow } from "./actions/actions";
@@ -141,7 +140,6 @@ function Main() {
           source: `node-${idx}`,
           target: idx == s.length - 1 ? "end" : `node-${idx + 1}`,
           type: "smoothstep",
-          // animated: true,
           markerEnd: {
             type: MarkerType.ArrowClosed,
           },
