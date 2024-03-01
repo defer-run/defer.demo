@@ -201,7 +201,7 @@ function Main() {
           <Image src={logo} alt={"Defer"} className="flex-1 max-w-24" />
           <a
             className="py-2 px-3 flex rounded-md no-underline hover:bg-btn-background-hover border"
-            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdefer-run%2Fdefer.demo%2Ftree%2Fmaster%2Fnextjs%2Fresend-template%2F&project-name=nextjs-with-defer-resend&repository-name=nextjs-with-defer-resend&demo-title=nextjs-with-defer-resend&demo-description=Schedule%20or%20offload%20the%20sending%20of%20rich%20emails%20with%20Resend.&demo-url=https%3A%2F%2Fdemo-nextjs-with-defer-resend.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fdefer-run%2Fdefer.demo%2Ftree%2Fmaster%2Fnextjs%2Fresend-template%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fdefer-run%2Fdefer.demo%2Fmaster%2Fnextjs%2Fresend-template%2Fapp%2Fog_image.png&integration-ids="
+            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdefer-run%2Fdefer.demo%2Ftree%2Fmaster%2Fnextjs%2Fuser-workflow-template%2F&project-name=nextjs-workflow-builder-with-defer&repository-name=nextjs-workflow-builder-with-defer&demo-title=nextjs-workflow-builder-with-defer&demo-description=A%20User%20Notification%20Builder%20built%20with%20Defer&demo-url=https%3A%2F%2Fnextjs-workflow-builder-with-defer.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fdefer-run%2Fdefer.demo%2Ftree%2Fmaster%2Fnextjs%2Fuser-workflow-template%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fdefer-run%2Fdefer.demo%2Fmaster%2Fnextjs%2Fuser-workflow-template%2Fapp%2Fog_image.png&integration-ids="
             target="_blank"
             rel="noreferrer"
           >
